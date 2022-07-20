@@ -71,7 +71,7 @@
   },
   {
     "model": "book_app.book",
-    "pk": 7,
+    "pk": 8,
     "fields": {
       "title": "Good Omens",
       "author": "Terry Pratchett and Neil Gaiman",
