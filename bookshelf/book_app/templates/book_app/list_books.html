@@ -1,9 +1,8 @@
 {% extends 'book_app/index.html' %}
 
 {%block content%}
-<h1>Genre: {{genre}}</h1>
+<h1>Genre: {{genre.name}}</h1>
 {% for book in books%}
-<!-- <p>{{book}}</p> -->
 <a href = "{% url 'book_info' genre.id book.id %}">{{book.title}}</a>
 <br>
 

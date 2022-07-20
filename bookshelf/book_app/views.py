@@ -8,6 +8,9 @@ from .models import Book, Genre
 from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
+def index(request):
+    return render(request, 'book_app/base.html')
+
 def list_genres(request):
     genres = Genre.objects.all()
     print(genres)
