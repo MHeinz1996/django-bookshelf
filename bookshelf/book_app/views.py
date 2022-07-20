@@ -18,7 +18,6 @@ def list_genres(request):
     return render(request, 'book_app/list_genres.html', data)
 
 def list_books(request, genre_id):
-    # return HttpResponse("<h1> LIST BOOKS </h1>")
     genre_books = Book.objects.all().filter(genre_id = genre_id)
     genre_name = Genre.objects.all().get(id = genre_id)
     data = {"books": genre_books, "genre": genre_name}
@@ -34,8 +33,11 @@ def book_info(request, genre_id, book_id):
 def add_book(request, genre_id):
     if request.method == "POST":
         body = json.loads(request.body)
+
+        # Making book object
         newBook = Book(title = body["title"], author = body["author"], description = body["description"], genre_id = genre_id)
         newBook.save()
+
     # default get request
     return render(request, "book_app/add_book.html")
 
